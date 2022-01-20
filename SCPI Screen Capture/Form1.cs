@@ -118,7 +118,7 @@ namespace SCPI {
             if (Global.tc.IsOpen) {
                 Global.tc.Dispose();
                 btn_connect.Text = "Connect";
-                this.Text = "SCPI Screen Capture - Disconnected";
+               // this.Text = "SCPI Screen Capture - Disconnected";
             } else {
                 try {
                     string hostName = IP1.Value + "." + IP2.Value + "." + IP3.Value + "." + IP4.Value;
@@ -130,7 +130,7 @@ namespace SCPI {
                     Properties.Settings.Default.IP4 = Convert.ToByte(IP4.Value);
                     Properties.Settings.Default.Save();
                     btn_connect.Text = "Disconnect";
-                    this.Text = "SCPI Screen Capture - " + Global.tc.Hostname;
+                    //this.Text = "SCPI Screen Capture - " + Global.tc.Hostname;
                 } catch (Exception ex) {
                     MessageBox.Show("Connection Failed");
                 }
@@ -163,12 +163,12 @@ namespace SCPI {
             {
                 Global.tc = new Telnet.TelnetCon();
                 Global.tc.Open(Properties.Settings.Default.IP);
-                this.Text = "SCPI Screen Capture - " + Global.tc.Hostname;
+                //this.Text = "SCPI Screen Capture - " + Global.tc.Hostname;
                 btn_connect.Text = "Disconnect";
             }
             catch (Exception ex)
             {
-                this.Text = "SCPI Screen Capture - Disconnected";
+                //this.Text = "SCPI Screen Capture - Disconnected";
             }
         }
     }
