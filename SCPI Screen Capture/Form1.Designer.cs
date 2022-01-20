@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_capture = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cBox_Extension = new System.Windows.Forms.ComboBox();
             this.chBox_Color = new System.Windows.Forms.CheckBox();
             this.chBox_Invert = new System.Windows.Forms.CheckBox();
@@ -45,7 +43,6 @@
             this.CopyToClipboardCB = new System.Windows.Forms.CheckBox();
             this.BeepCB = new System.Windows.Forms.CheckBox();
             this.HotkeyCB = new System.Windows.Forms.CheckBox();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IP3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IP4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IP2)).BeginInit();
@@ -54,30 +51,13 @@
             // 
             // btn_capture
             // 
-            this.btn_capture.Location = new System.Drawing.Point(21, 111);
+            this.btn_capture.Location = new System.Drawing.Point(21, 95);
             this.btn_capture.Name = "btn_capture";
             this.btn_capture.Size = new System.Drawing.Size(334, 40);
             this.btn_capture.TabIndex = 10;
             this.btn_capture.Text = "Capture";
             this.btn_capture.UseVisualStyleBackColor = true;
             this.btn_capture.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.connectionToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(377, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // connectionToolStripMenuItem
-            // 
-            this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.connectionToolStripMenuItem.Text = "About";
-            this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
             // 
             // cBox_Extension
             // 
@@ -88,7 +68,7 @@
             "PNG",
             "JPEG",
             "TIFF"});
-            this.cBox_Extension.Location = new System.Drawing.Point(261, 84);
+            this.cBox_Extension.Location = new System.Drawing.Point(261, 68);
             this.cBox_Extension.Name = "cBox_Extension";
             this.cBox_Extension.Size = new System.Drawing.Size(94, 21);
             this.cBox_Extension.TabIndex = 9;
@@ -98,7 +78,7 @@
             this.chBox_Color.AutoSize = true;
             this.chBox_Color.Checked = true;
             this.chBox_Color.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chBox_Color.Location = new System.Drawing.Point(21, 86);
+            this.chBox_Color.Location = new System.Drawing.Point(21, 70);
             this.chBox_Color.Name = "chBox_Color";
             this.chBox_Color.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chBox_Color.Size = new System.Drawing.Size(50, 17);
@@ -109,7 +89,7 @@
             // chBox_Invert
             // 
             this.chBox_Invert.AutoSize = true;
-            this.chBox_Invert.Location = new System.Drawing.Point(76, 86);
+            this.chBox_Invert.Location = new System.Drawing.Point(76, 70);
             this.chBox_Invert.Name = "chBox_Invert";
             this.chBox_Invert.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chBox_Invert.Size = new System.Drawing.Size(53, 17);
@@ -119,14 +99,14 @@
             // 
             // TextBoxFilePath
             // 
-            this.TextBoxFilePath.Location = new System.Drawing.Point(21, 60);
+            this.TextBoxFilePath.Location = new System.Drawing.Point(21, 44);
             this.TextBoxFilePath.Name = "TextBoxFilePath";
             this.TextBoxFilePath.Size = new System.Drawing.Size(334, 20);
             this.TextBoxFilePath.TabIndex = 6;
             // 
             // btn_connect
             // 
-            this.btn_connect.Location = new System.Drawing.Point(280, 31);
+            this.btn_connect.Location = new System.Drawing.Point(280, 15);
             this.btn_connect.Name = "btn_connect";
             this.btn_connect.Size = new System.Drawing.Size(75, 23);
             this.btn_connect.TabIndex = 5;
@@ -136,7 +116,7 @@
             // 
             // IP3
             // 
-            this.IP3.Location = new System.Drawing.Point(178, 34);
+            this.IP3.Location = new System.Drawing.Point(178, 18);
             this.IP3.Maximum = new decimal(new int[] {
             255,
             0,
@@ -148,7 +128,7 @@
             // 
             // IP4
             // 
-            this.IP4.Location = new System.Drawing.Point(229, 34);
+            this.IP4.Location = new System.Drawing.Point(229, 18);
             this.IP4.Maximum = new decimal(new int[] {
             255,
             0,
@@ -160,7 +140,7 @@
             // 
             // IP2
             // 
-            this.IP2.Location = new System.Drawing.Point(127, 34);
+            this.IP2.Location = new System.Drawing.Point(127, 18);
             this.IP2.Maximum = new decimal(new int[] {
             255,
             0,
@@ -172,7 +152,7 @@
             // 
             // IP1
             // 
-            this.IP1.Location = new System.Drawing.Point(76, 34);
+            this.IP1.Location = new System.Drawing.Point(76, 18);
             this.IP1.Maximum = new decimal(new int[] {
             255,
             0,
@@ -185,7 +165,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 36);
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 7;
@@ -194,7 +174,7 @@
             // CopyToClipboardCB
             // 
             this.CopyToClipboardCB.AutoSize = true;
-            this.CopyToClipboardCB.Location = new System.Drawing.Point(21, 158);
+            this.CopyToClipboardCB.Location = new System.Drawing.Point(21, 142);
             this.CopyToClipboardCB.Name = "CopyToClipboardCB";
             this.CopyToClipboardCB.Size = new System.Drawing.Size(108, 17);
             this.CopyToClipboardCB.TabIndex = 11;
@@ -204,7 +184,7 @@
             // BeepCB
             // 
             this.BeepCB.AutoSize = true;
-            this.BeepCB.Location = new System.Drawing.Point(136, 158);
+            this.BeepCB.Location = new System.Drawing.Point(136, 142);
             this.BeepCB.Name = "BeepCB";
             this.BeepCB.Size = new System.Drawing.Size(125, 17);
             this.BeepCB.TabIndex = 12;
@@ -214,7 +194,7 @@
             // HotkeyCB
             // 
             this.HotkeyCB.AutoSize = true;
-            this.HotkeyCB.Location = new System.Drawing.Point(21, 181);
+            this.HotkeyCB.Location = new System.Drawing.Point(21, 165);
             this.HotkeyCB.Name = "HotkeyCB";
             this.HotkeyCB.Size = new System.Drawing.Size(252, 17);
             this.HotkeyCB.TabIndex = 13;
@@ -226,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 210);
+            this.ClientSize = new System.Drawing.Size(377, 194);
             this.Controls.Add(this.HotkeyCB);
             this.Controls.Add(this.BeepCB);
             this.Controls.Add(this.CopyToClipboardCB);
@@ -241,19 +221,15 @@
             this.Controls.Add(this.chBox_Color);
             this.Controls.Add(this.cBox_Extension);
             this.Controls.Add(this.btn_capture);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "Rigol DS1054Z screen capture 1.0-RC";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IP3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IP4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IP2)).EndInit();
@@ -266,8 +242,6 @@
         #endregion
 
         private System.Windows.Forms.Button btn_capture;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem connectionToolStripMenuItem;
         private System.Windows.Forms.ComboBox cBox_Extension;
         private System.Windows.Forms.CheckBox chBox_Color;
         private System.Windows.Forms.CheckBox chBox_Invert;
