@@ -47,7 +47,7 @@ namespace SCPI {
 
         private void Form1_Load(object sender, EventArgs e) {
             try {
-                Global.tc = new Telnet.TelnetCon();
+
 
                 if (Properties.Settings.Default.Path == "") {
                     Properties.Settings.Default.Path = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) + "\\";
@@ -76,9 +76,7 @@ namespace SCPI {
                     GlobalHotKey.RegisterHotKey("Alt + Shift + s", () => button1_Click(null, null));
                 }
 
-                Global.tc.Open(Properties.Settings.Default.IP);
-                this.Text = "SCPI Screen Capture - " + Global.tc.Hostname;
-                btn_connect.Text = "Disconnect";
+
             } catch (Exception ex) {
                 this.Text = "SCPI Screen Capture - Disconnected";
             }
@@ -113,7 +111,7 @@ namespace SCPI {
         private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, IntPtr lp);
 
         private void connectionToolStripMenuItem_Click(object sender, EventArgs e) {
-            MessageBox.Show("By Stefanos Tselepis\rAlpha 0.0.1");
+            MessageBox.Show("By Stefanos Tselepis\rAlpha 0.0.2");
         }
 
         private void btn_connect_Click(object sender, EventArgs e) {
@@ -156,6 +154,21 @@ namespace SCPI {
             else
             {
                 GlobalHotKey.DisposeAllHotkeys();
+            }
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            try
+            {
+                Global.tc = new Telnet.TelnetCon();
+                Global.tc.Open(Properties.Settings.Default.IP);
+                this.Text = "SCPI Screen Capture - " + Global.tc.Hostname;
+                btn_connect.Text = "Disconnect";
+            }
+            catch (Exception ex)
+            {
+                this.Text = "SCPI Screen Capture - Disconnected";
             }
         }
     }

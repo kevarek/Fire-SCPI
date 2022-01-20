@@ -56,7 +56,7 @@
             this.btn_capture.Location = new System.Drawing.Point(21, 111);
             this.btn_capture.Name = "btn_capture";
             this.btn_capture.Size = new System.Drawing.Size(334, 40);
-            this.btn_capture.TabIndex = 0;
+            this.btn_capture.TabIndex = 10;
             this.btn_capture.Text = "Capture";
             this.btn_capture.UseVisualStyleBackColor = true;
             this.btn_capture.Click += new System.EventHandler(this.button1_Click);
@@ -90,7 +90,7 @@
             this.cBox_Extension.Location = new System.Drawing.Point(261, 84);
             this.cBox_Extension.Name = "cBox_Extension";
             this.cBox_Extension.Size = new System.Drawing.Size(94, 21);
-            this.cBox_Extension.TabIndex = 1;
+            this.cBox_Extension.TabIndex = 9;
             // 
             // chBox_Color
             // 
@@ -101,7 +101,7 @@
             this.chBox_Color.Name = "chBox_Color";
             this.chBox_Color.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chBox_Color.Size = new System.Drawing.Size(50, 17);
-            this.chBox_Color.TabIndex = 4;
+            this.chBox_Color.TabIndex = 7;
             this.chBox_Color.Text = "Color";
             this.chBox_Color.UseVisualStyleBackColor = true;
             // 
@@ -112,7 +112,7 @@
             this.chBox_Invert.Name = "chBox_Invert";
             this.chBox_Invert.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chBox_Invert.Size = new System.Drawing.Size(53, 17);
-            this.chBox_Invert.TabIndex = 5;
+            this.chBox_Invert.TabIndex = 8;
             this.chBox_Invert.Text = "Invert";
             this.chBox_Invert.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +128,7 @@
             this.btn_connect.Location = new System.Drawing.Point(280, 31);
             this.btn_connect.Name = "btn_connect";
             this.btn_connect.Size = new System.Drawing.Size(75, 23);
-            this.btn_connect.TabIndex = 12;
+            this.btn_connect.TabIndex = 5;
             this.btn_connect.Text = "Connect";
             this.btn_connect.UseVisualStyleBackColor = true;
             this.btn_connect.Click += new System.EventHandler(this.btn_connect_Click);
@@ -143,7 +143,7 @@
             0});
             this.IP3.Name = "IP3";
             this.IP3.Size = new System.Drawing.Size(45, 20);
-            this.IP3.TabIndex = 11;
+            this.IP3.TabIndex = 3;
             // 
             // IP4
             // 
@@ -155,7 +155,7 @@
             0});
             this.IP4.Name = "IP4";
             this.IP4.Size = new System.Drawing.Size(45, 20);
-            this.IP4.TabIndex = 10;
+            this.IP4.TabIndex = 4;
             // 
             // IP2
             // 
@@ -167,7 +167,7 @@
             0});
             this.IP2.Name = "IP2";
             this.IP2.Size = new System.Drawing.Size(45, 20);
-            this.IP2.TabIndex = 9;
+            this.IP2.TabIndex = 2;
             // 
             // IP1
             // 
@@ -179,7 +179,7 @@
             0});
             this.IP1.Name = "IP1";
             this.IP1.Size = new System.Drawing.Size(45, 20);
-            this.IP1.TabIndex = 8;
+            this.IP1.TabIndex = 1;
             // 
             // label1
             // 
@@ -196,7 +196,7 @@
             this.CopyToClipboardCB.Location = new System.Drawing.Point(21, 158);
             this.CopyToClipboardCB.Name = "CopyToClipboardCB";
             this.CopyToClipboardCB.Size = new System.Drawing.Size(108, 17);
-            this.CopyToClipboardCB.TabIndex = 13;
+            this.CopyToClipboardCB.TabIndex = 11;
             this.CopyToClipboardCB.Text = "Copy to clipboard";
             this.CopyToClipboardCB.UseVisualStyleBackColor = true;
             // 
@@ -206,7 +206,7 @@
             this.BeepCB.Location = new System.Drawing.Point(136, 158);
             this.BeepCB.Name = "BeepCB";
             this.BeepCB.Size = new System.Drawing.Size(125, 17);
-            this.BeepCB.TabIndex = 14;
+            this.BeepCB.TabIndex = 12;
             this.BeepCB.Text = "Beep when captured";
             this.BeepCB.UseVisualStyleBackColor = true;
             // 
@@ -216,7 +216,7 @@
             this.HotkeyCB.Location = new System.Drawing.Point(21, 181);
             this.HotkeyCB.Name = "HotkeyCB";
             this.HotkeyCB.Size = new System.Drawing.Size(252, 17);
-            this.HotkeyCB.TabIndex = 15;
+            this.HotkeyCB.TabIndex = 13;
             this.HotkeyCB.Text = "Enable global hotkey for capture (Alt + Shift + S)";
             this.HotkeyCB.UseVisualStyleBackColor = true;
             this.HotkeyCB.CheckedChanged += new System.EventHandler(this.HotkeyCB_CheckedChanged);
@@ -249,6 +249,7 @@
             this.Text = " ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IP3)).EndInit();
