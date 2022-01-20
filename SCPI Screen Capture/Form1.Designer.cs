@@ -41,6 +41,9 @@
             this.IP2 = new System.Windows.Forms.NumericUpDown();
             this.IP1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.CopyToClipboardCB = new System.Windows.Forms.CheckBox();
+            this.BeepCB = new System.Windows.Forms.CheckBox();
+            this.HotkeyCB = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IP3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IP4)).BeginInit();
@@ -187,11 +190,45 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "IP Address";
             // 
+            // CopyToClipboardCB
+            // 
+            this.CopyToClipboardCB.AutoSize = true;
+            this.CopyToClipboardCB.Location = new System.Drawing.Point(21, 158);
+            this.CopyToClipboardCB.Name = "CopyToClipboardCB";
+            this.CopyToClipboardCB.Size = new System.Drawing.Size(108, 17);
+            this.CopyToClipboardCB.TabIndex = 13;
+            this.CopyToClipboardCB.Text = "Copy to clipboard";
+            this.CopyToClipboardCB.UseVisualStyleBackColor = true;
+            // 
+            // BeepCB
+            // 
+            this.BeepCB.AutoSize = true;
+            this.BeepCB.Location = new System.Drawing.Point(136, 158);
+            this.BeepCB.Name = "BeepCB";
+            this.BeepCB.Size = new System.Drawing.Size(125, 17);
+            this.BeepCB.TabIndex = 14;
+            this.BeepCB.Text = "Beep when captured";
+            this.BeepCB.UseVisualStyleBackColor = true;
+            // 
+            // HotkeyCB
+            // 
+            this.HotkeyCB.AutoSize = true;
+            this.HotkeyCB.Location = new System.Drawing.Point(21, 181);
+            this.HotkeyCB.Name = "HotkeyCB";
+            this.HotkeyCB.Size = new System.Drawing.Size(252, 17);
+            this.HotkeyCB.TabIndex = 15;
+            this.HotkeyCB.Text = "Enable global hotkey for capture (Alt + Shift + S)";
+            this.HotkeyCB.UseVisualStyleBackColor = true;
+            this.HotkeyCB.CheckedChanged += new System.EventHandler(this.HotkeyCB_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 169);
+            this.ClientSize = new System.Drawing.Size(377, 210);
+            this.Controls.Add(this.HotkeyCB);
+            this.Controls.Add(this.BeepCB);
+            this.Controls.Add(this.CopyToClipboardCB);
             this.Controls.Add(this.btn_connect);
             this.Controls.Add(this.IP3);
             this.Controls.Add(this.IP4);
@@ -210,6 +247,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -237,6 +275,9 @@
         private System.Windows.Forms.NumericUpDown IP2;
         private System.Windows.Forms.NumericUpDown IP1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox CopyToClipboardCB;
+        private System.Windows.Forms.CheckBox BeepCB;
+        private System.Windows.Forms.CheckBox HotkeyCB;
     }
 }
 

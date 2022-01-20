@@ -24,6 +24,19 @@ namespace SCPI {
                     byte[] data = Rigol1000.getScreenCapture((byte)cBox_Extension.SelectedIndex, chBox_Color.Checked, chBox_Invert.Checked);
                     string filename = DateTime.Now.ToString(new CultureInfo("de-DE")).Replace(":", ".") + "." + Rigol1000.extensions[cBox_Extension.SelectedIndex];
                     File.WriteAllBytes(TextBoxFilePath.Text + filename, data);
+
+
+                    if (CopyToClipboardCB.Checked)
+                    {
+                        Bitmap bitmap = new Bitmap(new MemoryStream(data));
+                        Clipboard.SetData(DataFormats.Bitmap, bitmap);
+                    }
+
+                    if (BeepCB.Checked)
+                    {
+                        System.Media.SystemSounds.Beep.Play();
+                    }
+
                 } else
                     MessageBox.Show("Telnet is closed");
 
@@ -51,6 +64,17 @@ namespace SCPI {
                 cBox_Extension.SelectedIndex = Properties.Settings.Default.Extension;
                 chBox_Color.Checked = Properties.Settings.Default.Color;
                 chBox_Invert.Checked = Properties.Settings.Default.Invert;
+
+                CopyToClipboardCB.Checked = Properties.Settings.Default.CopyCBState;
+                BeepCB.Checked = Properties.Settings.Default.BeepCBState;
+                HotkeyCB.Checked = Properties.Settings.Default.HotkeyCBState;
+    
+                Properties.Settings.Default.Save();
+
+                if (HotkeyCB.Checked)
+                {
+                    GlobalHotKey.RegisterHotKey("Alt + Shift + s", () => button1_Click(null, null));
+                }
 
                 Global.tc.Open(Properties.Settings.Default.IP);
                 this.Text = "SCPI Screen Capture - " + Global.tc.Hostname;
@@ -112,6 +136,26 @@ namespace SCPI {
                 } catch (Exception ex) {
                     MessageBox.Show("Connection Failed");
                 }
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.CopyCBState = CopyToClipboardCB.Checked;
+            Properties.Settings.Default.BeepCBState = BeepCB.Checked;
+            Properties.Settings.Default.HotkeyCBState = HotkeyCB.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void HotkeyCB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (HotkeyCB.Checked)
+            {
+                GlobalHotKey.RegisterHotKey("Alt + Shift + s", () => button1_Click(null, null));
+            }
+            else
+            {
+                GlobalHotKey.DisposeAllHotkeys();
             }
         }
     }
